@@ -1050,6 +1050,37 @@ const App: React.FC = () => {
           />
         )}
 
+        {/* Developer Footer */}
+        <footer className="mt-16 mb-8 px-6">
+          <div className="bg-gradient-to-br from-orange-500 to-pink-500 rounded-3xl p-8 text-white shadow-2xl">
+            <div className="text-center space-y-4">
+              <div className="flex justify-center">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-3xl">👨‍💻</span>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold">Desenvolvido por Guielihan</h3>
+              <p className="text-sm text-white/90 font-medium">Atividade do Curso MVP Flow - GoDevs</p>
+              <p className="text-xs text-white/80">Professor: Luan</p>
+              <div className="h-px bg-white/20 my-4"></div>
+              <div className="space-y-2 text-sm">
+                <a href="mailto:guielihan@outlook.com" className="flex items-center justify-center gap-2 hover:text-white/80 transition-colors">
+                  <Icon name="email" className="text-lg" />
+                  guielihan@outlook.com
+                </a>
+                <div className="flex items-center justify-center gap-2">
+                  <Icon name="discord" className="text-lg" />
+                  <span>guielihan</span>
+                </div>
+              </div>
+              <div className="pt-4">
+                <p className="text-xs text-white/70">Feito com React + TypeScript + Vite</p>
+                <p className="text-xs text-white/60 mt-1">🌐 Site ativo 24/7 na Vercel</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+
       </div>
     </div>
   );
