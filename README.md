@@ -14,6 +14,30 @@
 
 </div>
 
+---
+
+## 📸 Demonstração Visual
+
+<div align="center">
+
+### 🎨 Interface Principal - Modo Claro
+![Tela Principal - Modo Claro](./screenshots/01-modo-claro.png)
+
+### 🌙 Interface Principal - Modo Escuro
+![Tela Principal - Modo Escuro](./screenshots/02-modo-escuro.png)
+
+### 🛒 Carrinho de Compras
+![Carrinho de Compras](./screenshots/03-carrinho.png)
+
+### ⭐ Produtos Favoritos
+![Favoritos](./screenshots/04-favoritos.png)
+
+</div>
+
+> **📝 Nota:** Para adicionar os screenshots, acesse a pasta [`screenshots/`](./screenshots) e siga as instruções. O projeto está rodando em http://localhost:3000/
+
+---
+
 ## 📋 Sobre o Projeto
 
 Cardápio digital moderno e interativo desenvolvido como atividade prática do **Curso MVP Flow**, ministrado pelo **Professor Luan** da equipe **GoDevs**. 
