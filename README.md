@@ -34,7 +34,7 @@
 
 </div>
 
-> **📝 Nota:** Para adicionar os screenshots, acesse a pasta [`screenshots/`](./screenshots) e siga as instruções. O projeto está rodando em http://localhost:3000/
+> **📝 O projeto está rodando em http://localhost:3000/
 
 ---
 
