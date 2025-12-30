@@ -198,7 +198,7 @@ const HomeView = ({
   };
 
   return (
-    <div className="pb-28 animate-fade-in relative">
+    <main className="pb-28 animate-fade-in relative">
       {/* Header */}
       <header className="px-6 pt-6 pb-4 flex justify-between items-center bg-white dark:bg-[#18181B] sticky top-0 z-30 shadow-sm transition-colors duration-300">
         <div className="flex items-center gap-3 relative">
@@ -261,7 +261,7 @@ const HomeView = ({
       )}
 
       {/* Search & Filter */}
-      <div className="px-6 mt-4 mb-2 relative z-10">
+      <section className="px-6 mt-4 mb-2 relative z-10" aria-label="Busca e filtros">
         <div className="flex gap-3">
           <div className="flex-1 relative">
             <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
@@ -301,11 +301,11 @@ const HomeView = ({
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Deals of the Day Carousel */}
       {discountedProducts.length > 0 && searchQuery === '' && categoryFilter === 'all' && (
-        <div className="mb-6 pl-6">
+        <section className="mb-6 pl-6" aria-label="Ofertas relâmpago">
           <div className="flex items-center gap-2 mb-3">
             <h2 className="text-lg font-bold text-gray-800 dark:text-white">Ofertas Relâmpago</h2>
             <span className="bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse">LIVE ⚡</span>
@@ -331,11 +331,11 @@ const HomeView = ({
               </div>
             ))}
           </div>
-        </div>
+        </section>
       )}
 
       {/* Product Grid */}
-      <div className={`px-6 grid grid-cols-1 sm:grid-cols-2 gap-6 transition-opacity duration-300 ${animatingCategory ? 'opacity-50' : 'opacity-100'}`}>
+      <section className={`px-6 grid grid-cols-1 sm:grid-cols-2 gap-6 transition-opacity duration-300 ${animatingCategory ? 'opacity-50' : 'opacity-100'}`} aria-label="Lista de produtos">
         {filteredProducts.length === 0 ? (
            <div className="col-span-full text-center py-12">
              <Icon name="search_off" className="text-4xl text-gray-300 mb-2" />
@@ -343,7 +343,7 @@ const HomeView = ({
            </div>
         ) : (
           filteredProducts.map((product: Product) => (
-            <div 
+            <article 
               key={product.id} 
               className="bg-white dark:bg-[#27272A] rounded-2xl p-4 shadow-sm hover:shadow-md transition-all duration-300 relative group border border-transparent dark:border-gray-800"
             >
@@ -383,11 +383,11 @@ const HomeView = ({
                   </button>
                 </div>
               </div>
-            </div>
+            </article>
           ))
         )}
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 
@@ -430,7 +430,7 @@ const DetailsView = ({ product, onBack, onAddToCart }: any) => {
   const condimentTotal = (Object.values(condiments) as number[]).reduce((a, b) => a + b, 0);
 
   return (
-    <div className="bg-white dark:bg-[#18181B] min-h-screen pb-32 animate-slide-up relative">
+    <main className="bg-white dark:bg-[#18181B] min-h-screen pb-32 animate-slide-up relative">
       <div className="relative h-[40vh]">
         <img src={product.image} className="w-full h-full object-cover" alt={product.name} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60"></div>
@@ -442,7 +442,7 @@ const DetailsView = ({ product, onBack, onAddToCart }: any) => {
         </button>
       </div>
 
-      <div className="relative -mt-10 bg-white dark:bg-[#18181B] rounded-t-[2.5rem] px-6 pt-8">
+      <section className="relative -mt-10 bg-white dark:bg-[#18181B] rounded-t-[2.5rem] px-6 pt-8">
         <div className="w-12 h-1 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto mb-6"></div>
         
         <div className="flex justify-between items-start mb-4 gap-4">
@@ -463,8 +463,8 @@ const DetailsView = ({ product, onBack, onAddToCart }: any) => {
         </p>
 
         {/* Free Condiments Section */}
-        <div className="mb-8">
-           <h3 className="font-bold text-gray-800 dark:text-white mb-1 flex items-center gap-2">
+        <section className="mb-8" aria-labelledby="condiments-heading">
+           <h3 id="condiments-heading" className="font-bold text-gray-800 dark:text-white mb-1 flex items-center gap-2">
             <Icon name="room_service" className="text-primary" /> Molhos Grátis
           </h3>
           <p className="text-xs text-gray-400 mb-4">Escolha até 3 sachês no total</p>
@@ -498,13 +498,14 @@ const DetailsView = ({ product, onBack, onAddToCart }: any) => {
                 </div>
              ))}
           </div>
-        </div>
+        </section>
 
-        <h3 className="font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
-          <Icon name="restaurant_menu" className="text-primary" /> Adicionais
-        </h3>
+        <section className="mb-8" aria-labelledby="addons-heading">
+          <h3 id="addons-heading" className="font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+            <Icon name="restaurant_menu" className="text-primary" /> Adicionais
+          </h3>
 
-        <div className="space-y-3 mb-8">
+          <div className="space-y-3">
           {ADDONS.map((addon) => (
             <div 
               key={addon.name}
@@ -524,8 +525,9 @@ const DetailsView = ({ product, onBack, onAddToCart }: any) => {
               <span className="text-sm font-bold text-primary whitespace-nowrap">+ R$ {addon.price.toFixed(2).replace('.', ',')}</span>
             </div>
           ))}
-        </div>
-      </div>
+          </div>
+        </section>
+      </section>
 
       <div className="fixed bottom-0 left-0 w-full p-4 bg-white dark:bg-[#18181B] border-t border-gray-100 dark:border-gray-800 z-30">
         <button 
@@ -536,7 +538,7 @@ const DetailsView = ({ product, onBack, onAddToCart }: any) => {
           <span className="whitespace-nowrap">R$ {calculateTotal().toFixed(2).replace('.', ',')}</span>
         </button>
       </div>
-    </div>
+    </main>
   );
 };
 
@@ -578,7 +580,7 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
 
   if (cart.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-[#18181B] p-6 text-center animate-fade-in">
+      <main className="min-h-screen flex flex-col items-center justify-center bg-white dark:bg-[#18181B] p-6 text-center animate-fade-in">
         <div className="w-24 h-24 bg-gray-100 dark:bg-[#27272A] rounded-full flex items-center justify-center mb-6">
           <Icon name="shopping_cart" className="text-4xl text-gray-400" />
         </div>
@@ -587,12 +589,12 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
         <button onClick={onBack} className="bg-primary text-white px-8 py-3 rounded-xl font-bold">
           Voltar para o Cardápio
         </button>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div className="bg-gray-50 dark:bg-[#18181B] min-h-screen pb-32 animate-fade-in">
+    <main className="bg-gray-50 dark:bg-[#18181B] min-h-screen pb-32 animate-fade-in">
       <header className="bg-white dark:bg-[#18181B] p-4 sticky top-0 z-20 shadow-sm flex items-center gap-4">
         <button onClick={onBack} className="p-2 hover:bg-gray-100 dark:hover:bg-[#27272A] rounded-full text-gray-800 dark:text-white transition-colors">
           <Icon name="arrow_back" />
@@ -602,7 +604,7 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
 
       <div className="p-4 space-y-6 max-w-lg mx-auto">
         {/* Items List */}
-        <div className="space-y-4">
+        <section className="space-y-4" aria-label="Itens do carrinho">
           {cart.map((item: CartItem) => {
             const condimentList = Object.entries(item.condiments || {})
               .filter(([_, count]) => count > 0)
@@ -641,10 +643,10 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
               </div>
             );
           })}
-        </div>
+        </section>
 
         {/* Coupon */}
-        <div className="bg-white dark:bg-[#27272A] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+        <section className="bg-white dark:bg-[#27272A] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800" aria-label="Cupom de desconto">
           <h4 className="text-sm font-bold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
              <Icon name="local_offer" className="text-primary text-sm" /> Cupom de Desconto
           </h4>
@@ -658,10 +660,10 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
             />
             <button className="bg-gray-800 dark:bg-gray-700 text-white px-4 py-2 rounded-lg text-xs font-bold uppercase hover:bg-gray-900">Aplicar</button>
           </div>
-        </div>
+        </section>
 
         {/* Checkout Form */}
-        <div className="bg-white dark:bg-[#27272A] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 space-y-4">
+        <section className="bg-white dark:bg-[#27272A] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 space-y-4" aria-label="Formulário de entrega">
            <h4 className="text-sm font-bold text-gray-800 dark:text-white mb-1 flex items-center gap-2">
              <Icon name="location_on" className="text-primary text-sm" /> Endereço e Contato
           </h4>
@@ -705,9 +707,9 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
                </div>
              )}
           </div>
-        </div>
+        </section>
 
-        <div className="bg-white dark:bg-[#27272A] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 space-y-3">
+        <section className="bg-white dark:bg-[#27272A] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 space-y-3" aria-label="Forma de pagamento">
            <h4 className="text-sm font-bold text-gray-800 dark:text-white mb-1 flex items-center gap-2">
              <Icon name="payment" className="text-primary text-sm" /> Pagamento
           </h4>
@@ -726,9 +728,9 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
               </button>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="bg-white dark:bg-[#27272A] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800">
+        <section className="bg-white dark:bg-[#27272A] p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800" aria-label="Observações do pedido">
            <h4 className="text-sm font-bold text-gray-800 dark:text-white mb-2">Observações</h4>
            <textarea 
              className="w-full bg-gray-50 dark:bg-[#18181B] border border-gray-200 dark:border-gray-700 rounded-lg p-3 text-sm dark:text-white outline-none focus:border-primary h-24 resize-none"
@@ -736,17 +738,17 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
              value={form.observation}
              onChange={(e) => handleInputChange('observation', e.target.value)}
            ></textarea>
-        </div>
+        </section>
         
         {/* Socials */}
-        <div className="flex justify-center gap-6 pt-4 text-gray-400">
+        <nav className="flex justify-center gap-6 pt-4 text-gray-400" aria-label="Redes sociais">
           <a href="#" className="hover:text-primary transition-colors"><Icon name="groups" /></a> {/* Bater Perna representation */}
           <a href="#" className="hover:text-primary transition-colors"><Icon name="work" /></a> {/* Linkedin representation */}
           <a href="#" className="hover:text-primary transition-colors"><Icon name="camera_alt" /></a> {/* Instagram representation */}
-        </div>
+        </nav>
 
         {/* Totals */}
-        <div className="space-y-2 pt-4">
+        <section className="space-y-2 pt-4" aria-label="Resumo do pedido">
            <div className="flex justify-between text-gray-500 text-sm">
              <span>Subtotal</span>
              <span>R$ {subtotal.toFixed(2).replace('.', ',')}</span>
@@ -761,7 +763,7 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
              <span>Total</span>
              <span>R$ {total.toFixed(2).replace('.', ',')}</span>
            </div>
-        </div>
+        </section>
       </div>
 
       {/* Checkout Actions */}
@@ -781,7 +783,7 @@ const CartView = ({ cart, updateQuantity, removeFromCart, onBack, onCheckout }: 
           </button>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

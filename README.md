@@ -1,5 +1,14 @@
 # 🍕 Cardápio Digital Interativo
 
+## 👨‍💻 Desenvolvedor
+
+**Guilherme Queiroz (Guielihan)**
+
+- 📧 Email: [guielihan@outlook.com](mailto:guielihan@outlook.com)
+- 💬 Discord: guielihan
+- 🎓 Curso: MVP Flow - GoDevs
+- 👨‍🏫 Professor: Luan
+
 <div align="center">
   
   ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
@@ -9,8 +18,6 @@
 
   **Atividade do Curso MVP Flow - GoDevs**  
   **Professor: Luan**
-  
-  🌐 **[SITE ATIVO 24/7](https://login-page-for-bank-833k4zb29-guielihans-projects.vercel.app)**
 
 </div>
 
@@ -33,8 +40,6 @@
 ![Favoritos](./screenshots/04-favoritos.png)
 
 </div>
-
-> **📝 O projeto está rodando em http://localhost:3000/
 
 ---
 
@@ -66,7 +71,7 @@ Sistema completo de pedidos online com carrinho de compras, favoritos, modo escu
 
 ### Pré-requisitos
 
-- Node.js (versão 16 ou superior)
+- Node.js (versão 16 ou superior) - **Nota:** Node.js é usado apenas para o ambiente de desenvolvimento com Vite. Este projeto não possui backend Node.js.
 - npm ou yarn
 
 ### Instalação
@@ -106,6 +111,19 @@ Este projeto está configurado para deploy em múltiplas plataformas:
 
 ### Vercel (Recomendado)
 
+O projeto já está configurado com `vercel.json` para deploy na Vercel. Você pode fazer o deploy de duas formas:
+
+#### Opção 1: Via Interface Web (Mais Fácil)
+
+1. Acesse [vercel.com](https://vercel.com) e faça login com sua conta GitHub
+2. Clique em "Add New Project"
+3. Importe o repositório `cardapio-atividade-01`
+4. A Vercel detectará automaticamente as configurações do Vite
+5. Clique em "Deploy" e aguarde o processo
+6. Após o deploy, copie a URL fornecida e atualize o link na seção "Site em Produção" abaixo
+
+#### Opção 2: Via CLI
+
 1. Instale a Vercel CLI:
 ```bash
 npm i -g vercel
@@ -116,6 +134,9 @@ npm i -g vercel
 vercel login
 vercel
 ```
+
+3. Siga as instruções no terminal e escolha as opções padrão
+4. Após o deploy, copie a URL fornecida e atualize o link na seção "Site em Produção" abaixo
 
 ### Netlify
 
@@ -153,24 +174,22 @@ cardapio-atividade-01/
 └── vite.config.ts     # Configuração Vite
 ```
 
-## 👨‍💻 Desenvolvedor
-
-**Guilherme Queiroz (Guielihan)**
-
-- 📧 Email: [guielihan@outlook.com](mailto:guielihan@outlook.com)
-- 💬 Discord: guielihan
-- 🎓 Curso: MVP Flow - GoDevs
-- 👨‍🏫 Professor: Luan
-
 ## 🌐 Site em Produção
 
-O site está hospedado na Vercel e fica **online 24/7**:
+O site está configurado para deploy na Vercel:
 
-**🔗 [https://login-page-for-bank-833k4zb29-guielihans-projects.vercel.app](https://login-page-for-bank-833k4zb29-guielihans-projects.vercel.app)**
+**🔗 URL do Deploy:** [https://cardapio-atividade-01.vercel.app](https://cardapio-atividade-01.vercel.app)
+
+> **✅ Deploy realizado com sucesso!** O site está disponível 24 horas por dia na Vercel.
+
+### ✨ Recursos do Deploy na Vercel
 
 ✅ Disponível 24 horas por dia  
-✅ HTTPS automático  
-✅ Deploy automático a cada push
+✅ HTTPS automático e gratuito  
+✅ Deploy automático a cada push na branch principal  
+✅ Preview deployments para cada pull request  
+✅ CDN global para carregamento rápido  
+✅ Analytics e monitoramento de performance
 
 ## 📄 Licença
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Prato -->
+  <ellipse cx="50" cy="70" rx="35" ry="8" fill="#3B82F6" opacity="0.9"/>
+  <ellipse cx="50" cy="70" rx="30" ry="6" fill="#60A5FA"/>
+  
+  <!-- Comida no prato -->
+  <circle cx="40" cy="65" r="8" fill="#F59E0B"/>
+  <circle cx="55" cy="68" r="6" fill="#10B981"/>
+  <circle cx="50" cy="62" r="7" fill="#EF4444"/>
+  <rect x="35" y="60" width="30" height="4" rx="2" fill="#8B5CF6"/>
+  
+  <!-- Garfo -->
+  <path d="M 25 30 L 25 55 L 23 55 L 23 30 L 25 30 Z" fill="#6B7280"/>
+  <path d="M 23 30 L 23 25 L 25 25 L 25 30 Z" fill="#4B5563"/>
+  <path d="M 24 25 L 24 20 L 26 20 L 26 25 Z" fill="#6B7280"/>
+  
+  <!-- Faca -->
+  <path d="M 70 25 L 70 55 L 68 55 L 68 25 L 70 25 Z" fill="#9CA3AF"/>
+  <path d="M 68 25 L 68 20 L 70 20 L 70 25 Z" fill="#6B7280"/>
+  <path d="M 69 20 L 69 15 L 71 15 L 71 20 Z" fill="#9CA3AF"/>
+</svg>
+
